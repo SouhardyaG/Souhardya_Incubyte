@@ -14,14 +14,13 @@ The core components of the project include:
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.11
 - Git (optional but recommended)
 
 ### Installation
 
 1. Clone this repository to your local machine:
-git clone https://github.com/SouhardyaG/chandrayaan-3-lunar-craft-control.git
-
+git clone https://github.com/SouhardyaG/Souhardya_Incubyte.git
 
 2. Navigate to the repository directory:
 cd chandrayaan-3-lunar-craft-control
