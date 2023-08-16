@@ -1,73 +1,74 @@
 import unittest
-from src.spaceship import Spaceship
+from src.spaceship import Spaceship  # Import the Spaceship class to test
 
 class TestSpaceship(unittest.TestCase):
     def test_move_forward(self):
-        # Create a spaceship instance and execute the 'f' command
+        # Create a new Spaceship instance
         spacecraft = Spaceship()
+        # Execute the "f" command
         spacecraft.execute_command("f")
-        
-        # Assert that the spaceship's position has moved forward in the 'N' direction
+        # Assert that the position has moved forward as expected
         self.assertEqual(spacecraft.get_position(), (0, 1, 0))
 
     def test_move_backward(self):
-        # Create a spaceship instance and execute the 'b' command
+        # Create a new Spaceship instance
         spacecraft = Spaceship()
+        # Execute the "b" command
         spacecraft.execute_command("b")
-        
-        # Assert that the spaceship's position has moved backward in the 'S' direction
+        # Assert that the position has moved backward as expected
         self.assertEqual(spacecraft.get_position(), (0, -1, 0))
 
     def test_turn_left(self):
-        # Create a spaceship instance facing 'N' direction and execute the 'l' command
+        # Create a new Spaceship instance with initial direction "N"
         spacecraft = Spaceship(direction="N")
+        # Execute the "l" command
         spacecraft.execute_command("l")
-        
-        # Assert that the spaceship's direction has turned from 'N' to 'W'
+        # Assert that the direction has turned left as expected
         self.assertEqual(spacecraft.get_direction(), "W")
 
     def test_turn_right(self):
-        # Create a spaceship instance facing 'N' direction and execute the 'r' command
+        # Create a new Spaceship instance with initial direction "N"
         spacecraft = Spaceship(direction="N")
+        # Execute the "r" command
         spacecraft.execute_command("r")
-        
-        # Assert that the spaceship's direction has turned from 'N' to 'E'
+        # Assert that the direction has turned right as expected
         self.assertEqual(spacecraft.get_direction(), "E")
 
     def test_turn_up(self):
-        # Create a spaceship instance facing 'N' direction and execute the 'u' command
+        # Create a new Spaceship instance with initial direction "N"
         spacecraft = Spaceship(direction="N")
+        # Execute the "u" command
         spacecraft.execute_command("u")
-        
-        # Assert that the spaceship's direction has turned from 'N' to 'Up'
+        # Assert that the direction has turned up as expected
         self.assertEqual(spacecraft.get_direction(), "Up")
 
     def test_turn_down(self):
-        # Create a spaceship instance facing 'N' direction and execute the 'd' command
+        # Create a new Spaceship instance with initial direction "N"
         spacecraft = Spaceship(direction="N")
+        # Execute the "d" command
         spacecraft.execute_command("d")
-        
-        # Assert that the spaceship's direction has turned from 'N' to 'Down'
+        # Assert that the direction has turned down as expected
         self.assertEqual(spacecraft.get_direction(), "Down")
 
     def test_e2e_scenario(self):
-        # Create a spaceship instance and execute a series of commands
+        # Create a new Spaceship instance
         spacecraft = Spaceship()
+        # Define a series of commands
         commands = ["f", "r", "u", "b", "l"]
+        # Execute each command sequentially
         for command in commands:
             spacecraft.execute_command(command)
-        
-        # Assert that the spaceship's position and direction match the expected final state
+        # Assert that the final position and direction are as expected
         self.assertEqual(spacecraft.get_position(), (0, 1, -1))
-        self.assertEqual(spacecraft.get_direction(), "N")
+        self.assertEqual(spacecraft.get_direction(), "Up")
 
     def test_invalid_command(self):
-        # Create a spaceship instance and try to execute an invalid command
+        # Create a new Spaceship instance
         spacecraft = Spaceship()
-        
-        # Assert that trying to execute an invalid command raises a ValueError
+        # Assert that executing an invalid command raises a ValueError
         with self.assertRaises(ValueError):
             spacecraft.execute_command("x")
 
 if __name__ == '__main__':
+    # Run the unit tests when the script is executed
     unittest.main()
