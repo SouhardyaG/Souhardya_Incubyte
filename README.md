@@ -20,7 +20,7 @@ The core components of the project include:
 ### Installation
 
 1. Clone this repository to your local machine:
-git clone https://github.com/your-username/chandrayaan-3-lunar-craft-control.git
+git clone https://github.com/SouhardyaG/chandrayaan-3-lunar-craft-control.git
 
 
 2. Navigate to the repository directory:
